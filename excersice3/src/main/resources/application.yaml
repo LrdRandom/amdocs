@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: CONSOLE
+  application:
+    name: amdocs-excersice3
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    cassandra:
+      enabled: true
+  metrics:
+    distribution:
+      percentiles[http.server.requests]: 0.90,0.95,0.99
+  info:
+    git:
+      mode: full
